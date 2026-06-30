@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>A Special Message 💌</title>
+<link rel="stylesheet" href="/birthday.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Dancing+Script:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Starfield + nebula -->
+<div class="bg-layer">
+  <canvas id="stars"></canvas>
+  <div class="nebula nebula-a"></div>
+  <div class="nebula nebula-b"></div>
+  <div class="nebula nebula-c"></div>
+  <div class="particles" id="particles"></div>
+</div>
+<!-- Music button -->
+<button id="musicBtn" class="music-btn" aria-label="Toggle music">
+  <span id="musicIcon">🔇</span>
+</button>
+<audio id="bgMusic" src="/audio/brithdat.mp3" loop preload="auto"></audio>
+<!-- SECTION 1+2: Landing / envelope -->
+<section id="landing" class="screen landing">
+  <h1 class="landing-title">You have a special message <span>💌</span></h1>
+  <div class="envelope-wrap">
+    <div id="envelope" class="envelope" role="button" tabindex="0" aria-label="Tap envelope">
+      <div class="env-back"></div>
+      <div class="env-flap" id="envFlap"></div>
+      <div class="env-letter" id="envLetter">
+        <p>♥</p>
+      </div>
+      <div class="env-front"></div>
+      <div class="env-glow"></div>
+    </div>
+  </div>
+  <p class="landing-sub">Tap <span id="tapCount">0</span>/5 to open</p>
+  <p class="landing-hint">Tap the envelope</p>
+</section>
+<!-- SECTION 4: Photo collage -->
+<section id="collage" class="screen collage hidden">
+  <h2 class="section-title">Our Memories</h2>
+  <div class="polaroid-grid" id="polaroidGrid"></div>
+  <div class="scroll-cue">↓ keep scrolling ↓</div>
+</section>
+<!-- SECTION 5: Letter -->
+<section id="letter" class="screen letter hidden">
+  <div class="glass-card">
+    <div class="letter-header">A little note for you</div>
+    <div class="typewriter" id="typewriter"></div>
+    <span class="cursor" id="cursor">|</span>
+  </div>
+  <button id="surpriseBtn" class="surprise-btn hidden">Open Final Surprise 🎁</button>
+</section>
+<!-- SECTION 6: Final -->
+<section id="final" class="screen final hidden">
+  <canvas id="fireworks"></canvas>
+  <div class="cake" id="cake">
+    <div class="flame"></div>
+    <div class="candle"></div>
+    <div class="cake-top"></div>
+    <div class="cake-mid"></div>
+    <div class="cake-bot"></div>
+    <div class="plate"></div>
+  </div>
+  <div class="final-message" id="finalMessage">
+    <h1>HAPPY BIRTHDAY <span class="name">LOVE</span> ❤️</h1>
+    <p>May all your dreams come true ✨</p>
+  </div>
+</section>
+<!-- Heart rain container -->
+<div class="heart-rain" id="heartRain" aria-hidden="true"></div>
+<!-- Finger-follow hearts -->
+<div class="cursor-hearts" id="cursorHearts" aria-hidden="true"></div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script src="/birthday.js" defer></script>
+</body>
+</html>
