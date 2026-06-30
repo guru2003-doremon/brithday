@@ -204,7 +204,7 @@ function showCollage() {
     const rot = (Math.random() * 10 - 5).toFixed(1);
     card.style.transform = `rotate(${rot}deg)`;
     card.innerHTML = `
-      <img src="images/photo${i}.jpg" alt="memory ${i}" loading="lazy"
+      <img src="photo${i}.jpg" alt="memory ${i}" loading="lazy"
            onerror="this.style.background='linear-gradient(135deg,#fcd5e0,#d8b4fe)';this.removeAttribute('src');" />
       <div class="caption">${captions[i-1]}</div>`;
     grid.appendChild(card);
